@@ -30,7 +30,8 @@ export class Config {
     | 'production'
     | 'test';
 
-  static readonly PUBLIC_PATH = join(__dirname, '../public');
+  static readonly PUBLIC_PATH =
+    process.env.PUBLIC_PATH || join(__dirname, '../public');
 
   static readonly ASSETS_PATH =
     process.env.ASSETS_PATH || join(this.configDirectory, 'img');
